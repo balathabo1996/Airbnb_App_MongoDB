@@ -1,0 +1,54 @@
+
+<div class="add-listing-page">
+    <div class="form-card">
+    <h2>Add New Listing</h2>
+
+    {{#if success}}
+        <p class="success">{{success}}</p>
+    {{/if}}
+
+    {{#if error}}
+        <p class="error">{{error}}</p>
+    {{/if}}
+
+    <form action="/api/airbnb/add" method="POST">
+        <label>ID:
+            <input type="text" name="id" placeholder="Enter ID" required>
+        </label>
+
+        <label>Name:
+            <input type="text" name="NAME" placeholder="Enter name" required>
+        </label>
+
+        <label>Room Type:
+            <input type="text" name="room type" placeholder="Enter room type" required>
+        </label>
+
+        <label>Country:
+            <input type="text" name="country" placeholder="Enter country" required>
+        </label>
+
+        <label>Price ($):
+            <input type="number" name="price" placeholder="Enter price" required>
+        </label>
+
+        <label>Service Fee ($):
+            <input type="number" name="service fee" placeholder="Enter service fee" required>
+        </label>
+
+        <label>Minimum Nights:
+            <input type="number" name="minimum nights" placeholder="Enter minimum nights" required>
+        </label>
+
+        <label>Number of Reviews:
+            <input type="number" name="number of reviews" placeholder="Enter number of reviews" required>
+        </label>
+
+        <label>Thumbnail URL:
+            <input type="text" name="thumbnail" placeholder="Enter thumbnail URL">
+        </label>
+
+        <button type="submit">Add Listing</button>
+    </form>
+    </div>
+</div>

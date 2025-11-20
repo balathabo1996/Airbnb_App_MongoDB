@@ -1,0 +1,44 @@
+<div class="form-card">
+    <h2>Filter Airbnb Listings by Price Range</h2>
+<form action="/api/airbnb/filter/price" method="POST">
+    <label for="min">Minimum Price:</label>
+    <input type="number" id="min" name="min" step="1" placeholder="Enter minimum price" value="{{min}}" required>
+
+    <label for="max">Maximum Price:</label>
+    <input type="number" id="max" name="max" step="1" placeholder="Enter maximum price" value="{{max}}" required>
+
+    <button type="submit">Filter</button>
+</form>
+
+<hr>
+{{#if error}}
+<div style="color:red; font-weight:bold;">{{error}}</div>
+{{/if}}
+
+{{#if result}}
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Room Type</th>
+        <th>Price</th>
+        <th>Thumbnail</th>
+    </tr>
+    {{#each result}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{NAME}}</td>
+        <td>{{country}}</td>
+        <td>{{this.[room type]}}</td>
+        <td>{{price}}</td>
+        <td>
+            {{#if thumbnail}}
+            <img src="{{thumbnail}}" alt="Thumbnail" width="80">
+            {{/if}}
+        </td>   
+    </tr>
+    {{/each}}
+</table>
+{{/if}}
+</div>

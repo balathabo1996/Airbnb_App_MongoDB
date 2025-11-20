@@ -1,0 +1,32 @@
+<div class="form-card">
+    <h2>Search Airbnb by Listing ID</h2>
+<form action="/api/airbnb/search/id" method="POST">
+    <label>Enter Listing ID: <input type="text" name="id" placeholder="Enter listing ID" required></label>
+    <button type="submit">Search</button>
+</form>
+    <h3>Search Result {{result.id}}:</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Neighbourhood</th>
+            <th>Price ($)</th>
+            <th>Thumbnail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{result.id}}</td>
+            <td>{{result.NAME}}</td>
+            <td>{{result.neighbourhood}}</td>
+            <td>{{result.price}}</td>
+            <td>
+                {{#if result.thumbnail}}
+                <img src="{{result.thumbnail}}" alt="Thumbnail" width="80">
+                {{/if}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>  

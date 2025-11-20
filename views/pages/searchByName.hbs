@@ -1,0 +1,40 @@
+<div class="form-card">
+    <h2>Search Airbnb by Name</h2>
+<form action="/api/airbnb/search/name" method="POST">
+    <label for="NAME">Enter Name:</label>
+    <input type="text" id="NAME" name="NAME" placeholder="Enter name" required>
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+{{#if error}}
+<div style="color:red; font-weight:bold;">{{error}}</div>
+{{/if}}
+
+{{#if result}}
+<h3>Results {{result.NAME}}:</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Neighbourhood</th>
+            <th>Price ($)</th>
+            <th>Thumbnail</th>
+        </tr>
+    {{#each result}}
+    <tr>
+        <td>{{id}}</td>
+            <td>{{NAME}}</td>
+            <td>{{neighbourhood}}</td>
+            <td>{{price}}</td>
+            <td>
+                {{#if thumbnail}}
+                <img src="{{thumbnail}}" alt="Thumbnail" width="80">
+                {{/if}}
+            </td>
+    </tr>
+    {{/each}}
+</table>
+{{/if}}
+</div>

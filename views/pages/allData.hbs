@@ -1,0 +1,28 @@
+<h2>All Airbnb Listings</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Neighbourhood</th>
+            <th>Price ($)</th>
+            <th>Thumbnail</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.NAME}}</td>
+            <td>{{this.neighbourhood}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                {{#if this.thumbnail}}
+                <img src="{{this.thumbnail}}" alt="Thumbnail" width="80">
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

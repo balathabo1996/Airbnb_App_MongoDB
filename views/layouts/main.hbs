@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1>Airbnb Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/api/airbnb/add">Add Listing</a></li>
+                    <li><a href="/api/airbnb/search/id">Search by ID</a></li>
+                    <li><a href="/api/airbnb/search/name">Search by Name</a></li>
+                    <li><a href="/api/airbnb/search/index">Search by Index</a></li>
+                    <li><a href="/api/airbnb/filter/price">Filter by Price</a></li>
+                    <li><a href="/api/airbnb">All Listings (JSON)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="container">
+            {{{body}}}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2025 Airbnb Dashboard | Thabotharan Balachandran</p>
+        </div>
+    </footer>
+</body>
+</html>
